@@ -14,6 +14,26 @@ import gdown
 # Configuração da página 
 st.set_page_config(page_title="Curriculo interativo", page_icon="📊", layout="centered", initial_sidebar_state="collapsed")
 
+import streamlit as st
+
+# Código do Google Analytics
+google_analytics_id = os.getenv("GOOGLE_ANALYTICS_ID")
+
+google_analytics_code = f"""
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={google_analytics_id}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+
+  gtag('config', '{google_analytics_id}');
+</script>
+"""
+
+# Adiciona o código ao HTML do Streamlit
+st.components.v1.html(google_analytics_code, height=0)
+
 load_dotenv()
 
 
