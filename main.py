@@ -74,6 +74,7 @@ def ler_dados_google_sheets(spreadsheet_id, range='A1:U100'):
 
 # Lendo o arquivo CSV contendo o currículo
 
+spreadsheet_id_curriculo = os.getenv("SPREADSHEET_ID_CURRICULO")
 spreadsheet_id_curriculo = '1k0CQhchFzOQuy9oWYhB0hdDso_N0DazGKnTPJoZjiI8'
 
 dados = ler_dados_google_sheets(spreadsheet_id_curriculo)       
@@ -111,7 +112,7 @@ def generate_response(question):
 
 def main():
 
-        # ...existing code...
+        
     st.set_page_config(page_title="Curriculo interativo", page_icon="📊", layout="centered", initial_sidebar_state="collapsed")
     with st.sidebar:
         st.title("Sobre este Currículo")
@@ -145,9 +146,12 @@ def main():
         st.write("""
         O código-fonte deste projeto está disponível no [GitHub](https://github.com/seu_usuario/seu_repositorio). Sinta-se à vontade para explorar e contribuir!
         """)
-    perfil_file = "perfil.png"
+    perfil_file = "perfil.png" 
+    url_perfil = os.getenv("URL_PERFIL")
+ 
     if not os.path.exists(perfil_file):
-        gdown.download("https://drive.google.com/uc?id=1fH393nbFJsx2WdrsVtgyUj6Yjt_xy4Gs", perfil_file, quiet=False)
+        gdown.download(url_perfil, perfil_file, quiet=False)  
+        
     st.header("Alberto Milet ") 
     st.image(perfil_file, width=150)
     
