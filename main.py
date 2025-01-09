@@ -98,10 +98,10 @@ def ler_dados_google_sheets(spreadsheet_id, range='A1:U100'):
 # Lendo o arquivo CSV contendo o currículo
 
 spreadsheet_id_curriculo = os.getenv("SPREADSHEET_ID_CURRICULO")
-spreadsheet_id_curriculo = '1k0CQhchFzOQuy9oWYhB0hdDso_N0DazGKnTPJoZjiI8'
 
 dados = ler_dados_google_sheets(spreadsheet_id_curriculo)       
 df = pd.DataFrame(dados[1:], columns=dados[0]) 
+print(df.columns,df.head())
 
 # Configurando chave da API OpenAI
 load_dotenv()
