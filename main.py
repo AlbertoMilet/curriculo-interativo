@@ -11,6 +11,9 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError 
 import gdown
 
+# Configuração da página 
+st.set_page_config(page_title="Curriculo interativo", page_icon="📊", layout="centered", initial_sidebar_state="collapsed")
+
 load_dotenv()
 
 
@@ -110,10 +113,8 @@ def generate_response(question):
 
 
 
-def main():
-
-        
-    st.set_page_config(page_title="Curriculo interativo", page_icon="📊", layout="centered", initial_sidebar_state="collapsed")
+def main():        
+    
     with st.sidebar:
         st.title("Sobre este Currículo")
         st.write("""
