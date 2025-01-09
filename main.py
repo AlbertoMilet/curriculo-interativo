@@ -144,7 +144,7 @@ def main():
         """)
         st.write("### Código-fonte:")
         st.write("""
-        O código-fonte deste projeto está disponível no [GitHub](https://github.com/seu_usuario/seu_repositorio). Sinta-se à vontade para explorar e contribuir!
+        O código-fonte deste projeto está disponível no [GitHub](https://github.com/AlbertoMilet/curriculo-interativo). Sinta-se à vontade para explorar e contribuir!
         """)
     perfil_file = "perfil.png" 
     url_perfil = os.getenv("URL_PERFIL")
